@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萬年曆手帳 (Perpetual Planner)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 背景裝飾 -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
+        <div class="planner-wrapper glass-panel">
+            <!-- 左側萬年曆 -->
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prev-month" class="icon-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <h2 id="current-month-year" class="month-year-display"></h2>
+                    <button id="next-month" class="icon-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="calendar-grid">
+                    <!-- 星期標題 -->
+                    <div class="weekdays">
+                        <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+                    </div>
+                    <!-- 日期網格 -->
+                    <div id="days-container" class="days"></div>
+                </div>
+                <div class="calendar-footer">
+                    <button id="today-btn" class="secondary-btn">回到今天</button>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+
+            <!-- 右側任務面板 -->
+            <div class="tasks-section">
+                <div class="tasks-header">
+                    <h2 id="selected-date-display">請選擇日期</h2>
+                    <p id="task-stats" class="task-stats">0 個任務</p>
+                </div>
+
+                <div class="tasks-list-container">
+                    <ul id="tasks-list" class="tasks-list">
+                        <!-- 任務會被動態加入這裡 -->
+                    </ul>
+                    <div id="empty-state" class="empty-state">
+                        <i class="fa-regular fa-calendar-times"></i>
+                        <p>這天沒有安排行程</p>
+                    </div>
+                </div>
+
+                <div class="add-task-form">
+                    <h3>新增行程</h3>
+                    <div class="input-group">
+                        <input type="text" id="task-title" placeholder="輸入行程名稱..." autocomplete="off">
+                    </div>
+                    <div class="input-group row">
+                        <input type="time" id="task-time" title="時間">
+                        <button id="add-task-btn" class="primary-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
